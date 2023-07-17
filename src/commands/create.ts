@@ -61,8 +61,8 @@ export const formatInfo = (qustion: IQuestion): IQuestion => {
     git = git.slice(0, -1); // 去除最后一个字符/
   }
   // editPattern
-  const base = `/${git.slice(git.lastIndexOf("/") + 1)}/`;
-  const editPattern = `${git}/tree/master/docs/:path`;
+  const base = git ? `/${git.slice(git.lastIndexOf("/") + 1)}/` : '/';
+  const editPattern = git ? `${git}/tree/master/docs/:path` : '';
 
   return {
     ...qustion,

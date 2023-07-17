@@ -1,6 +1,6 @@
 {
   "name": "@csuxzy/xzy-cli",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "xzy-cli",
   "main": "index.js",
   "scripts": {
@@ -22,6 +22,10 @@
     "xzy": "./bin/bin.js",
     "xzy-dev": "./bin/bin-dev.js"
   },
+  "files": [
+    "build",
+    "bin/bin.js"
+  ],
   "keywords": [
     "cli",
     "node",
