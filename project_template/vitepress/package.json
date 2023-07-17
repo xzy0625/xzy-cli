@@ -1,0 +1,26 @@
+{
+  "name": "{{ name }}",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "{{author}}",
+  "description": "{{description}}",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "serve": "vitepress serve docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "{{git}}"
+  },
+  "keywords": [
+    "vitepress",
+    "blog",
+    "typescript",
+    "githu pages"
+  ],
+  "devDependencies": {
+    "vitepress": "^1.0.0-beta.5"
+  }
+}

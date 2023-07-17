@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "alwaysStrict": true,
+    "sourceMap": false,
+    "noEmit": false,
+    "noEmitHelpers": false,
+    "importHelpers": false,
+    "strictNullChecks": false,
+    "allowUnreachableCode": true,
+    "lib": ["es6"],
+    "typeRoots": ["./node_modules/@types"],
+    "outDir": "./build", // 重定向输出目录
+    "rootDir": "./src" // 仅用来控制输出的目录结构
+  },
+  "exclude": [ // 不参与打包的目录
+    "node_modules",
+    "build",
+  ],
+  "esModuleInterop": true,
+  "allowSyntheticDefaultImports": true,
+  "compileOnSave": false,
+  "buildOnSave": false
+}
