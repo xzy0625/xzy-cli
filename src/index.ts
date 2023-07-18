@@ -6,7 +6,7 @@ const figlet = require("figlet");
 
 const printLastVersion = async (version, name) => {
   const latestVersion = await getLatestVersion(name);
-  if (latestVersion === version || true) {
+  if (latestVersion !== version) {
     logger.info(
       `当前包有最新版本，可更新版本，${chalk.green(version)} -> ${chalk.green(
         latestVersion
