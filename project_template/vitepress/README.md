@@ -39,7 +39,9 @@ yarn dev
 ![question](https://csuxzy-images-1300770696.cos.ap-guangzhou.myqcloud.com/question.webp)
 
 ## 启用Algolia搜索
-请自行百度
+参考文档: 
+1. https://juejin.cn/post/7161320316285747231
+2. https://juejin.cn/post/7070109475419455519
 
 ## 其他配置
 
@@ -47,3 +49,5 @@ yarn dev
 
 ## 参考文档
 [vitepress](https://vitepress.dev/reference/default-theme-last-updated)
+https://process1024.github.io/vitepress/guide/theme-search
+https://juejin.cn/post/7164276166084263972

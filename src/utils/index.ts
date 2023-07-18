@@ -11,10 +11,10 @@ export interface IPackageInfo {
 
 // 获取某个路径下的所有文件路径
 export const getPathList = (pathName: string): string [] => {
-  let PathList = []
+  let PathList: string[] = [];
   try {
     PathList = globby.sync(pathName, { cwd: path.resolve(__dirname, '..'), deep: 1 }) || [];
-  } catch (error) {
+  } catch (error: any) {
     logger.error(error);
   }
   return PathList;

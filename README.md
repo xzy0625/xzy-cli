@@ -4,6 +4,7 @@
 <img src="./public/detail.png" style="zoom:50%;" />
 
 ## Install
+> 环境要求 node >= 14.18.2
 
 ```sh
 npm  install @csuxzy/xzy-cli -g

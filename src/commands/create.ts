@@ -174,11 +174,10 @@ const action = async (projectName: string, cmdArgs?: ICmdArgs) => {
     if (!(await checkProjectExist(targetDir))) {
       // 获取用户输入
       const projectInfo = formatInfo(await getQuestions(projectName));
-      console.log(projectInfo, "...");
+      console.log("配置如下:", projectInfo);
       await cloneProject(targetDir, projectName, template, projectInfo);
     }
   } catch (err) {
-    console.log(err, "?..");
     spinner.fail(err);
     return;
   }

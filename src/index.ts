@@ -4,7 +4,7 @@ import logger from "./helpers/logger";
 import * as chalk from "chalk";
 const figlet = require("figlet");
 
-const printLastVersion = async (version, name) => {
+const printLastVersion = async (version: string, name: string) => {
   const latestVersion = await getLatestVersion(name);
   if (latestVersion !== version) {
     logger.info(
@@ -57,7 +57,7 @@ const start = async () => {
     console.log();
     console.log(
       `Run ${chalk.cyan(
-        "zc-cli <command> --help"
+        "xzy <command> --help"
       )} for detailed usage of given command.`
     );
     console.log();
