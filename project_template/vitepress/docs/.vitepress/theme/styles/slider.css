@@ -1,0 +1,58 @@
+/** 
+  主题变量样式修改
+**/
+/* :root {
+  --vp-c-brand: #656dff;
+  --vp-c-brand-light: #757cff;
+} */
+ 
+/** 
+  顶部导航模块样式修改
+**/
+.VPNav {
+  .VPNavBar {
+    background-color: #fff;
+    border-bottom: 1px solid rgba(60, 60, 67, 0.13);
+  }
+  .VPNavBar.has-sidebar{
+    .curtain {
+      bottom: -30px !important;
+      /* 导航的底部边框不显示问题修改 */
+      &::before {
+        margin-top: 2px !important;
+      }
+    }
+  }
+  .logo {
+    height: 40px;
+  }
+}
+ 
+/**
+  内容模块样式修改
+**/
+ 
+.VPContent {
+  .VPDoc {
+    padding-left: 0 !important;
+  }
+  /* 内容左边距调整 */
+  .content-container {
+    margin-left: 20px !important;
+  }
+  /* 副标题样式修改 */
+  .container .text {
+    font-size: 46px !important;
+  }
+}
+ 
+ 
+/**
+  暗黑模式样式修改
+**/
+.dark {
+  .VPNav .VPNavBar {
+    background-color: #1e1e20;
+    border-bottom: 1px solid #000;
+  }
+}

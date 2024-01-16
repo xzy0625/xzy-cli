@@ -1,3 +1,6 @@
+import { headerPlugin } from './headerPlugin'
+import { sidebar } from './sidebar'
+
 export default {
   title: "{{ name }}", // 博客的标题
   description: "{{ description }}", // 博客的介绍
@@ -6,8 +9,11 @@ export default {
   themeConfig: {
     logo: "/images/logo.png", // 页面上显示的logo
     algolia: {
-      apiKey: 'your_api_key', // 这里是algolia的key和indexName，请自行前往申请
-      indexName: 'index_name'
+      appId: '', // algolia appid, 请自行前往申请 https://dashboard.algolia.com/account/plan/create?planName=grow
+      apiKey: '', // algolia apiKey, 请使用Search-Only API Key, 请自行前往申请
+      indexName: '', // algolia indexName, 请自行前往申请
+      placeholder: '请输入关键词',
+      buttonText: '搜索',
     },
     nav: [
       // 页面右上角的导航
@@ -22,48 +28,7 @@ export default {
         ],
       },
     ],
-    sidebar: {
-      // 侧边栏，可以分组
-      // 当用户在 `blogs` 目录页面下将会展示这个侧边栏
-      "/blogs/blog1/": [
-        {
-          text: "blog1",
-          items: [
-            {
-              text: "index",
-              link: "/blogs/blog1/",
-            },
-            {
-              text: "fisrt",
-              link: "/blogs/blog1/first",
-            },
-            {
-              text: "second",
-              link: "/blogs/blog1/second",
-            },
-          ],
-        },
-      ],
-      "/blogs/blog2/": [
-        {
-          text: "blog2",
-          items: [
-            {
-              text: "index",
-              link: "/blogs/blog2/",
-            },
-            {
-              text: "first",
-              link: "/blogs/blog2/first",
-            },
-            {
-              text: "second",
-              link: "/blogs/blog2/second",
-            },
-          ],
-        },
-      ],
-    },
+    sidebar,
     docFooter: { prev: '上一篇', next: '下一篇' },
     footer: {
       message: 'Released under the MIT License.',
@@ -76,5 +41,10 @@ export default {
       text: 'Edit this page on GitHub'
     },
     socialLinks: [{ icon: "github", link: "{{ git }}" }], // 可以连接到 github
+  },
+  markdown: {
+    config(md) {
+      md.use(headerPlugin)
+    }
   },
 };

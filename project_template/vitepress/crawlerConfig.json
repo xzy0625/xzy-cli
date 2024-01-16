@@ -1,0 +1,39 @@
+{
+  "index_name": "{{ 填写Algolia索引 }}",
+  "start_urls": ["https://***.github.io/{{ -- 填写页面部署之后的链接 }}/"],
+  "rateLimit": 8,
+  "maxDepth": 10,
+  "selectors": {
+    "lvl0": {
+      "selector": "",
+      "defaultValue": "Documentation"
+    },
+    "lvl1": ".content h1",
+    "lvl2": ".content h2",
+    "lvl3": ".content h3",
+    "lvl4": ".content h4",
+    "lvl5": ".content h5",
+    "content": ".content p, .content li",
+    "lang": {
+      "selector": "/html/@lang",
+      "type": "xpath",
+      "global": true,
+      "default_value": "en-US"
+    }
+  },
+  "selectors_exclude": [
+    "aside",
+    ".page-footer",
+    ".next-and-prev-link",
+    ".table-of-contents"
+  ],
+  "js_render": true,
+  "initialIndexSettings": {
+    "vueDocs": {
+      "attributesForFaceting": ["lang"]
+    }
+  },
+  "custom_settings": {
+    "attributesForFaceting": ["lang"]
+  }
+}

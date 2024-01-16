@@ -28,6 +28,22 @@ const gitCmds = (git: string): string [] => [
   `git remote add origin ${git}`,
 ];
 
+// 重写制定目录下的文件内容
+const rewriteFileContent = (targetDir: string, projectInfo: Object) => {
+  const paths = ['package.json', 'docs/.vitepress/config.js', 'docs/index.md'];
+
+  for (const path of paths) {
+    const fullPath = `${targetDir}/${path}`;
+    // 读取文件内容
+    const fileContent = fs.readFileSync(fullPath,  "utf-8");
+    logger.info(fullPath);
+    // 覆盖模版内容
+    const finalContent = handlebars.compile(fileContent)(projectInfo);
+    // 写入新内容
+    fs.writeFileSync(fullPath, finalContent);
+  }
+}
+
 // 获取用户输入
 export const getQuestions = async (projectName): Promise<IQuestion> => {
   return await inquirer.prompt([
@@ -106,21 +122,8 @@ export const cloneProject = async (
     targetDir
   );
 
-  // handlebars模版引擎解析用户输入的信息存在package.json
-  const packagePath = `${targetDir}/package.json`;
-  const configPath = `${targetDir}/docs/.vitepress/config.js`;
-
-  // 读取文件内容
-  const packageContent = fs.readFileSync(packagePath, "utf-8");
-  const configContent = fs.readFileSync(configPath, "utf-8");
-
-  // 覆盖模版内容
-  const packageResult = handlebars.compile(packageContent)(projectInfo);
-  const configResult = handlebars.compile(configContent)(projectInfo);
-
-  // 写入新内容
-  fs.writeFileSync(packagePath, packageResult);
-  fs.writeFileSync(configPath, configResult);
+  // 重写文件内容
+  rewriteFileContent(targetDir, projectInfo);
 
   logger.info("开始安装项目所需依赖");
 
