@@ -1,6 +1,6 @@
 {
   "name": "@csuxzy/xzy-cli",
-  "version": "1.0.10",
+  "version": "1.0.15",
   "description": "xzy-cli",
   "main": "index.js",
   "scripts": {
