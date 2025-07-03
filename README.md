@@ -1,5 +1,6 @@
 # @csuxzy/xzy-cli
 > 快速生成vitepress文档（vuepress支持中），省去配置时间。。。
+> 11111
 
 <img src="./public/detail.png" style="zoom:50%;" />
 
